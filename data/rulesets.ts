@@ -484,15 +484,15 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 	bugpokedex: {
 		effectType: 'ValidatorRule',
 		name: 'Bug Pokedex',
-		desc: "Only allows Pok&eacute;mon native to the Blueberry Academy (SV DLC2)",
+		desc: "Only allows Pok&eacute;mon with Bug Type",
 		onValidateSet(set, format) {
-			const blueberryDex = [
-				"caterpie", "metapod", "butterfree", "weedle", "kakuna", "beedrill", "paras", "parasect", "venonat", "venomoth", "scyther", "pinsir", "ledyba", "ledian", "spinarak", "ariados", "yanma", "pineco", "forretress", "scizor", "shuckle", "heracross", "wurmple", "silcoon", "beautifly", "cascoon", "dustox", "surskit", "masquerain", "nincada", "ninjask", "shedinja", "volbeat", "illumise", "anorith", "armaldo", "kricketot", "kricketune", "burmy", "wormadam-plant", "mothim", "combee", "vespiquen", "skorupi", "yanmega", "sewaddle", "swadloon", "leavanny", "venipede", "whirlipede", "scolipede", "dwebble", "crustle", "karrablast", "escavalier", "joltik", "galvantula", "shelmet", "accelgor", "durant", "larvesta", "volcarona", "genesect", "scatterbug", "spewpa", "vivillon", "grubbin", "charjabug", "vikavolt", "cutiefly", "ribombee", "dewpider", "araquanid", "wimpod", "golisopod", "buzzwole", "pheromosa", "blipbug", "dottler", "orbeetle", "sizzlipede", "centiskorch", "snom", "frosmoth", "kleavor", "tarountula", "spidops", "nymble", "lokix", "rellor", "rabsca", "slither-wing", "wormadam-sandy", "wormadam-trash"			
+			const bugDex = [
+				"Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Paras", "Parasect", "Venonat", "Venomoth", "Scyther", "Pinsir", "Ledyba", "Ledian", "Spinarak", "Ariados", "Yanma", "Pineco", "Forretress", "Scizor", "Shuckle", "Heracross", "Wurmple", "Silcoon", "Beautifly", "Cascoon", "Dustox", "Surskit", "Masquerain", "Nincada", "Ninjask", "Shedinja", "Volbeat", "Illumise", "Anorith", "Armaldo", "Kricketot", "Kricketune", "Burmy", "Wormadam-plant", "Mothim", "Combee", "Vespiquen", "Skorupi", "Yanmega", "Sewaddle", "Swadloon", "Leavanny", "Venipede", "Whirlipede", "Scolipede", "Dwebble", "Crustle", "Karrablast", "Escavalier", "Joltik", "Galvantula", "Shelmet", "Accelgor", "Durant", "Larvesta", "Volcarona", "Genesect", "Scatterbug", "Spewpa", "Vivillon", "Grubbin", "Charjabug", "Vikavolt", "Cutiefly", "Ribombee", "Dewpider", "Araquanid", "Wimpod", "Golisopod", "Buzzwole", "Pheromosa", "Blipbug", "Dottler", "Orbeetle", "Sizzlipede", "Centiskorch", "Snom", "Frosmoth", "Kleavor", "Tarountula", "Spidops", "Nymble", "Lokix", "Rellor", "Rabsca", "Slither-wing", "Wormadam-sandy", "Wormadam-trash",			
 			];
 			const species = this.dex.species.get(set.species || set.name);
-			if (!blueberryDex.includes(species.baseSpecies) && !blueberryDex.includes(species.name) &&
+			if (!bugDex.includes(species.baseSpecies) && !bugDex.includes(species.name) &&
 				!this.ruleTable.has('+' + species.id)) {
-				return [`${species.baseSpecies} is not in the Blueberry Pokédex.`];
+				return [species.baseSpecies + " is not in the Bug Pokédex."];
 			}
 		},
 	},
