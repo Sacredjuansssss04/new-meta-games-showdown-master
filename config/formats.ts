@@ -19,6 +19,28 @@ The column value will be ignored for repeat sections.
 
 export const Formats: import('../sim/dex-formats').FormatList = [
 
+	// S/V New MetaGames
+	///////////////////////////////////////////////////////////////////
+
+	{
+		section: "S/V New MetaGames",
+	},
+
+	{
+		name: "[Gen 9] Bug OU",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Force Monotype = Bug'],
+		banlist: [],
+	},
+
+	{
+		name: "[Gen 9] Dark OU",
+		mod: 'gen9',
+		ruleset: ['Standard NatDex', 'Force Monotype = Dark'],
+		banlist: [],
+	},
+
+
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 
