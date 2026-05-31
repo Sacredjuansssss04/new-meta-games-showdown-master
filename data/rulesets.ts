@@ -1,6 +1,6 @@
 // Note: These are the rules that formats use
 
-import { DexSpecies, Species, type Learnset } from "../sim/dex-species";
+import { DexSpecies, type Species, type Learnset } from "../sim/dex-species";
 import { TIERS } from "../tools/set-import/importer";
 
 // The list of formats is stored in config/formats.js
@@ -99,7 +99,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod',
 		],
 	},
-	natdexmod: { //mondongo
+	natdexmod: { // mondongo
 		effectType: 'ValidatorRule',
 		name: 'NatDex Mod',
 		desc: "Mechanics for National Dex formats",
@@ -487,7 +487,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		desc: "Only allows Pok&eacute;mon with Bug Type",
 		onValidateSet(set, format) {
 			const bugDex = [
-				"Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Paras", "Parasect", "Venonat", "Venomoth", "Scyther", "Pinsir", "Ledyba", "Ledian", "Spinarak", "Ariados", "Yanma", "Pineco", "Forretress", "Scizor", "Shuckle", "Heracross", "Wurmple", "Silcoon", "Beautifly", "Cascoon", "Dustox", "Surskit", "Masquerain", "Nincada", "Ninjask", "Shedinja", "Volbeat", "Illumise", "Anorith", "Armaldo", "Kricketot", "Kricketune", "Burmy", "Wormadam-plant", "Mothim", "Combee", "Vespiquen", "Skorupi", "Yanmega", "Sewaddle", "Swadloon", "Leavanny", "Venipede", "Whirlipede", "Scolipede", "Dwebble", "Crustle", "Karrablast", "Escavalier", "Joltik", "Galvantula", "Shelmet", "Accelgor", "Durant", "Larvesta", "Volcarona", "Genesect", "Scatterbug", "Spewpa", "Vivillon", "Grubbin", "Charjabug", "Vikavolt", "Cutiefly", "Ribombee", "Dewpider", "Araquanid", "Wimpod", "Golisopod", "Buzzwole", "Pheromosa", "Blipbug", "Dottler", "Orbeetle", "Sizzlipede", "Centiskorch", "Snom", "Frosmoth", "Kleavor", "Tarountula", "Spidops", "Nymble", "Lokix", "Rellor", "Rabsca", "Slither-wing", "Wormadam-sandy", "Wormadam-trash",			
+				"Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Paras", "Parasect", "Venonat", "Venomoth", "Scyther", "Pinsir", "Ledyba", "Ledian", "Spinarak", "Ariados", "Yanma", "Pineco", "Forretress", "Scizor", "Shuckle", "Heracross", "Wurmple", "Silcoon", "Beautifly", "Cascoon", "Dustox", "Surskit", "Masquerain", "Nincada", "Ninjask", "Shedinja", "Volbeat", "Illumise", "Anorith", "Armaldo", "Kricketot", "Kricketune", "Burmy", "Wormadam-plant", "Mothim", "Combee", "Vespiquen", "Skorupi", "Yanmega", "Sewaddle", "Swadloon", "Leavanny", "Venipede", "Whirlipede", "Scolipede", "Dwebble", "Crustle", "Karrablast", "Escavalier", "Joltik", "Galvantula", "Shelmet", "Accelgor", "Durant", "Larvesta", "Volcarona", "Genesect", "Scatterbug", "Spewpa", "Vivillon", "Grubbin", "Charjabug", "Vikavolt", "Cutiefly", "Ribombee", "Dewpider", "Araquanid", "Wimpod", "Golisopod", "Buzzwole", "Pheromosa", "Blipbug", "Dottler", "Orbeetle", "Sizzlipede", "Centiskorch", "Snom", "Frosmoth", "Kleavor", "Tarountula", "Spidops", "Nymble", "Lokix", "Rellor", "Rabsca", "Slither-wing", "Wormadam-sandy", "Wormadam-trash",
 			];
 			const species = this.dex.species.get(set.species || set.name);
 			if (!bugDex.includes(species.baseSpecies) && !bugDex.includes(species.name) &&
@@ -529,7 +529,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
 			const type = this.dex.types.get(this.ruleTable.valueRules.get('forcemonotype')!);
-			if (species.types[0] != '${type.name}' && species.types[1] != '${type.name}') {
+			if (species.types[0] !== '${type.name}' && species.types[1] !== '${type.name}') {
 				if (this.ruleTable.has(`+pokemon:${species.id}`)) return;
 				return [`${set.name || set.species} does not exist in the Bug Dex.`];
 			}
