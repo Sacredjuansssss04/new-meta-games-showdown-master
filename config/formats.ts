@@ -30,14 +30,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Bug OU",
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'Force Monotype = Bug'],
-		banlist: ['water'],
+		banlist: ['Bug Pokedex'],
 	},
 
 	{
 		name: "[Gen 9] Dark OU",
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'Force Monotype = Dark'],
-		banlist: [],
+		banlist: ['pokemon.type = Water'],
 	},
 
 
