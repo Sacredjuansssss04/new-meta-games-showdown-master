@@ -40,7 +40,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		banlist: [],
 	},
 
-
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
 
