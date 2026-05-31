@@ -40,6 +40,7 @@ export interface SpeciesFormatsData {
 	isNonstandard?: Nonstandard | null;
 	natDexTier?: TierTypes.Singles | TierTypes.Other;
 	tier?: TierTypes.Singles | TierTypes.Other;
+	bugDexTier?: TierTypes.Singles | TierTypes.Other;
 }
 
 export type ModdedSpeciesFormatsData = SpeciesFormatsData & { inherit?: true };

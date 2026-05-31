@@ -99,7 +99,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 			'Species Clause', 'Nickname Clause', 'OHKO Clause', 'Evasion Clause', 'Sleep Clause Mod',
 		],
 	},
-	natdexmod: {
+	natdexmod: { //mondongo
 		effectType: 'ValidatorRule',
 		name: 'NatDex Mod',
 		desc: "Mechanics for National Dex formats",
@@ -529,6 +529,10 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
 			const type = this.dex.types.get(this.ruleTable.valueRules.get('forcemonotype')!);
+			if (species.types[0] != '${type.name}' && species.types[1] != '${type.name}') {
+				if (this.ruleTable.has(`+pokemon:${species.id}`)) return;
+				return [`${set.name || set.species} does not exist in the Bug Dex.`];
+			}
 			if (!species.types.map(this.toID).includes(type.id)) {
 				return [`${set.species} must have ${type.name} type.`];
 			}

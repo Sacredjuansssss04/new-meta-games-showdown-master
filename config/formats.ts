@@ -29,7 +29,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		name: "[Gen 9] Bug OU",
 		mod: 'gen9',
-		ruleset: ['Standard NatDex', 'Force Monotype = Bug', 'Bug Pokedex'],
+		ruleset: ['Standard NatDex', 'Force Monotype = Bug'],
 		banlist: [],
 	},
 
