@@ -30,7 +30,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		name: "[Gen 9] Bug OU",
 		mod: 'gen9',
 		ruleset: ['Standard NatDex', 'Force Monotype = Bug', 'Bug Pokedex'],
-		banlist: [],
+		banlist: ['ND Uber', 'ND AG', 'ND OU', 'ND UUBL', 'ND UU', 'ND RUBL', 'ND RU', 'ND NFE', 'ND LC'],
+		unbanlist: ["Caterpie", "Metapod", "Butterfree", "Weedle", "Kakuna", "Beedrill", "Paras", "Parasect", "Venonat", "Venomoth", "Scyther", "Pinsir", "Ledyba", "Ledian", "Spinarak", "Ariados", "Yanma", "Pineco", "Forretress", "Scizor", "Shuckle", "Heracross", "Wurmple", "Silcoon", "Beautifly", "Cascoon", "Dustox", "Surskit", "Masquerain", "Nincada", "Ninjask", "Shedinja", "Volbeat", "Illumise", "Anorith", "Armaldo", "Kricketot", "Kricketune", "Burmy", "Wormadam-plant", "Mothim", "Combee", "Vespiquen", "Skorupi", "Yanmega", "Sewaddle", "Swadloon", "Leavanny", "Venipede", "Whirlipede", "Scolipede", "Dwebble", "Crustle", "Karrablast", "Escavalier", "Joltik", "Galvantula", "Shelmet", "Accelgor", "Durant", "Larvesta", "Volcarona", "Genesect", "Scatterbug", "Spewpa", "Vivillon", "Grubbin", "Charjabug", "Vikavolt", "Cutiefly", "Ribombee", "Dewpider", "Araquanid", "Wimpod", "Golisopod", "Buzzwole", "Pheromosa", "Blipbug", "Dottler", "Orbeetle", "Sizzlipede", "Centiskorch", "Snom", "Frosmoth", "Kleavor", "Tarountula", "Spidops", "Nymble", "Lokix", "Rellor", "Rabsca", "Slither-wing", "Wormadam-sandy", "Wormadam-trash"]
 	},
 
 	{
@@ -39,7 +40,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard NatDex', 'Force Monotype = Dark'],
 		banlist: [],
 	},
-
 
 	// S/V Singles
 	///////////////////////////////////////////////////////////////////
