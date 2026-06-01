@@ -529,7 +529,7 @@ export const Rulesets: import('../sim/dex-formats').FormatDataTable = {
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
 			const type = this.dex.types.get(this.ruleTable.valueRules.get('forcemonotype')!);
-			if (species.types[0] !== '${type.name}' && species.types[1] !== '${type.name}') {
+			if (species.types[0] !== '${type.name}' || species.types[1] !== '${type.name}') {
 				if (this.ruleTable.has(`+pokemon:${species.id}`)) return;
 				return [`${set.name || set.species} does not exist in the Bug Dex.`];
 			}
